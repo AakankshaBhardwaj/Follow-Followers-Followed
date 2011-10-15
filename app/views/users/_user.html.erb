@@ -1,0 +1,15 @@
+<% unless @user == user  %>
+	<tr>
+		<td><%= link_to user.name, user %></td>
+		<td>
+			<% if @user.following? user %>
+				<%= render :partial => 'unfollow', :locals => { :user => user } %>
+			<% else %>
+				<%= render :partial => 'follow', :locals => { :user => user } %>
+			<% end %>
+		</td>
+	    <td></td>
+	    <td></td>
+	
+	</tr>
+<% end %>

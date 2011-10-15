@@ -1,0 +1,10 @@
+<a href="<%= following_user_path @user %>">
+	<p>
+		<%= @user.following.count %> following
+	</p>
+</a>
+<a href="<%= followers_user_path @user %>">
+	<p>
+		<%= pluralize(@user.followers.count, "follower") %>
+	</p>
+</a>

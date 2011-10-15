@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+  </br>
+  <%= render 'stats' %>
+</p>
+
+<table>
+	<tr>
+		<th>Following:</th>
+		<th></th>
+	    <th></th>
+	    <th></th>
+	</tr>
+	<%= render @user.following %>
+</table>
+</br>
+
+<table>
+	<tr>
+		<th>Not Following:</th>
+		<th></th>
+	    <th></th>
+	    <th></th>
+	</tr>
+	<%= render User.unfollowed_by @user %>
+</table>
+</br>
+
+<table>
+	<tr>
+		<th>Followers:</th>
+		<th></th>
+	    <th></th>
+	    <th></th>
+	</tr>
+	<%= render @user.followers %>
+</table>
+</br>
+
+
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
